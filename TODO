@@ -1,0 +1,4 @@
+Tasks:
+  ☐ Create CLI tool with help
+  ☐ Load `yml` file with install config
+  ☐ Define plugable installers
