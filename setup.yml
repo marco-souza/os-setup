@@ -1,0 +1,50 @@
+variables:
+  workspace: $HOME/dev
+  node_global: $HOME/.npm-global
+  oh_my_zsh: $HOME/.oh-my-zsh
+  omz_theme: ${oh_my_zsh}/themes/spaceship-prompt
+  omz_waka: ${oh_my_zsh}/custom/plugins/zsh-wakatime
+
+system_install:
+  - git
+  - python-pip
+  - nodejs
+  - npm
+  - zsh
+  - curl
+  - zip
+  - unzip
+sh:
+  - curl -fsSL https://deno.land/x/install/install.sh | sh
+
+clone:
+  - name: Cloning Oh-My-Zsh
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    path: oh_my_zsh
+
+  - name: Cloning theme spaceship-prompt
+    repo: https://github.com/denysdovhan/spaceship-prompt.git
+    path: omz_theme
+
+  - name: Cloning wakatime plugin
+    repo: https://github.com/wbingli/zsh-wakatime.git
+    path: omz_waka
+
+mkdir:
+  - workspace
+  - node_global
+
+copy:
+  - dest: $HOME
+    files:
+      - .aliases
+      - .zshrc
+
+pip:
+  - virtualenv
+  - virtualenvwrapper
+  - wakatime
+
+exec:
+  - zsh
+  - exit
