@@ -23,10 +23,18 @@ It will load your `zshrc` or `bashrc` config from your github repo.
 To install this project you ran just run:
 
 ```sh
-deno install oss https://raw.githubusercontent.com/marco-souza/os-setup/master/oss.ts
+deno install --unstable --allow-read --allow-run  oss https://raw.githubusercontent.com/marco-souza/os-setup/master/oss.ts
 ```
 
 After this you will have a `oss` cli tool to configure your system.
+
+### Development
+
+To run in development mode, you can just run in shell:
+
+```sh
+deno run --unstable --allow-read --allow-run oss.ts
+```
 
 ### Usage
 
